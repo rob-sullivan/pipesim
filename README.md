@@ -1,0 +1,2 @@
+# pipesim
+Pipesim is for engineers seeking opensource heat balance software alternatives, to construct thermal system networks by selecting, dragging, dropping, and connecting icons representing equipment and components.
