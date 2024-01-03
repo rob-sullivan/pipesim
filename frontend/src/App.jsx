@@ -1,17 +1,3 @@
-# pipesim
-Pipesim is for engineers seeking opensource heat balance software alternatives, to construct thermal system networks by selecting, dragging, dropping, and connecting icons representing equipment and components.
-
-
-## Dev
-Ensured latest node was installed.
-
->yarn create vite frontend -- --template react
-
-changed into frontend folder then ran
->yarn add reactflow
-
-Removed everything in `App.jsx` and added the following
-```javascript
 import React, { useCallback } from 'react';
 import ReactFlow, {
   MiniMap,
@@ -25,10 +11,18 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
  
 const initialNodes = [
-  { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
-  { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
+  { id: '1', position: { x: 300, y: 0 }, data: { label: 'Chiller' } },
+  { id: '2', position: { x: 0, y: 100 }, data: { label: 'Heat Exchanger' } },
+  { id: '3', position: { x: 200, y: 100 }, data: { label: 'Heat Exchanger' } },
+  { id: '4', position: { x: 400, y: 100 }, data: { label: 'Heat Exchanger' } },
+  { id: '5', position: { x: 600, y: 100 }, data: { label: 'Heat Exchanger' } },
 ];
-const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
+const initialEdges = [{ id: 'e1-2', source: '1', target: '2' },
+                      { id: 'e1-3', source: '1', target: '3' },
+                      { id: 'e1-4', source: '1', target: '4' },
+                      { id: 'e1-5', source: '1', target: '5' },
+                      { id: 'e1-6', source: '1', target: '6' },
+                      { id: 'e1-7', source: '1', target: '7' },];
  
 export default function App() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -55,4 +49,3 @@ export default function App() {
     </div>
   );
 }
-```
